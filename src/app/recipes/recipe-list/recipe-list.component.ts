@@ -7,12 +7,11 @@ import { Recipe } from '../recipes.model';
     styleUrl: './recipe-list.component.css',
 })
 export class RecipeListComponent {
+    private readonly placeholderImg: string = 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg';
+
     protected recipes: Recipe[] = [
-        new Recipe(
-            'Gulasch',
-            'Very good eating.',
-            'https://img.chefkoch-cdn.de/rezepte/431091134310048/bilder/1509751/crop-960x540/gulasch-nach-oma-magda.jpg',
-        ),
+        new Recipe('Gulasch', 'Traditional soup, extremely tasty!', this.placeholderImg),
+        new Recipe('Wiener Schnitzel', 'The Austrian special dish', this.placeholderImg),
     ];
 
     constructor() {}
