@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Recipe } from '../../recipes.model';
 
 @Component({
-  selector: 'app-recipe-item',
-  templateUrl: './recipe-item.component.html',
-  styleUrl: './recipe-item.component.css'
+    selector: 'app-recipe-item',
+    templateUrl: './recipe-item.component.html',
+    styleUrl: './recipe-item.component.css',
 })
 export class RecipeItemComponent {
+    @Input() protected recipe: Recipe;
 
+    @Output() recipeSelected = new EventEmitter<void>();
+
+    onSelected(): void {
+        this.recipeSelected.emit();
+    }
 }
